@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import About from './Components/About/About';
+import ErrorPage from './Components/ErrorPage/ErrorPage';
 import Events from './Components/Events/Events';
 import Home from './Components/Home/Home';
 import Reviews from './Components/Reviews/Reviews';
@@ -15,7 +16,8 @@ function App() {
       {path:'reviews', element:<Reviews></Reviews>, loader:()=>fetch('review.json')},
       {path:'events', element:<Events></Events>},
       {path:'teachers', element:<Teachers></Teachers>}
-    ]}
+    ]},
+    {path:'*', element:<ErrorPage></ErrorPage>}
   ])
   return (
     <div className="App">
